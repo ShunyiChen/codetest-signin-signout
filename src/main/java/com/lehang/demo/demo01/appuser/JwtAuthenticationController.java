@@ -76,7 +76,7 @@ public class JwtAuthenticationController {
 		return ResponseEntity.ok(appUserService.createNewUser(user));
 	}
 
-	@PostMapping(value = "/signout")
+	@DeleteMapping(value = "/signout")
 	public ResponseEntity<?> logout(@RequestParam String token) {
 		try {
 			String userName = jwtTokenUtil.getUsernameFromToken(token);
